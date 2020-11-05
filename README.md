@@ -1,0 +1,2 @@
+# VDshop
+Simple store implementation
