@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-
-from .models import Product
+from .models import Product, SmartPhone
 
 
 def home(request):
-    return render(request, "store/home.html")
+    context = {"smartphones": SmartPhone.objects.all()}
+    return render(request, "store/home.html", context=context)
 
 
 def product_detail(request, slug):
