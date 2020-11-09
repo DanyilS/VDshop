@@ -36,4 +36,4 @@ def generate_slug(title):
     """
 
     latin_title = transliterate(title)
-    return slugify(latin_title) + '-' + str(int(time()))
+    return slugify(latin_title) + '_' + str(int(time()))

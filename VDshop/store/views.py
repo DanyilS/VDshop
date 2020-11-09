@@ -16,4 +16,16 @@ def product_detail(request, slug):
     }
 
     # TODO: write template "store/templates/store/product_detail.html"
+    return render(request, 'store/product_detail.html', context=context)
+
+
+def products_list(request):
+
+    products = Product.objects.all()
+
+    context = {
+        'products': products
+    }
+
+    # TODO: write template "store/templates/store/product_detail.html"
     return render(request, '', context=context)
