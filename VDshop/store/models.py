@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
-
 from .utils import generate_slug
+
 
 class Product(models.Model):
 
@@ -23,3 +23,11 @@ class Product(models.Model):
         if not self.id:
             self.slug = generate_slug(self.title)
         super().save(*args, **kwargs)
+
+
+class SmartPhone(Product):
+
+    ram = models.IntegerField(verbose_name="Ram")
+
+    def __str__(self):
+        return f"ram {self.ram} title {self.title}"
