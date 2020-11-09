@@ -1,6 +1,5 @@
 from django.db import models
 from django.urls import reverse
-
 from .utils import generate_slug
 
 
@@ -24,4 +23,20 @@ class Product(models.Model):
         if not self.id:
             self.slug = generate_slug(self.title)
         super().save(*args, **kwargs)
+
+
+
+class SmartPhone(Product):
+
+    water_resist = models.CharField(verbose_name="Стандарт защиты от воды", max_length=50)
+    weight = models.IntegerField(verbose_name="Вес")
+    color = models.CharField(verbose_name="Цвет", max_length=50)
+    display_type = models.CharField(verbose_name="Тип экрана", max_length=50)
+    display_diagonal = models.FloatField(verbose_name="Диагональ экрана")
+    main_camera = models.IntegerField(verbose_name="Разрешение основной камеры")
+    front_camera = models.IntegerField(verbose_name="Разрешение фронтальной камеры")
+    cpu = models.CharField(verbose_name="Процессор", max_length=50)
+    ram = models.IntegerField(verbose_name="Оперативная память")
+    ssd = models.IntegerField(verbose_name="Встроенная память")
+    system = models.CharField(verbose_name="Платформа", max_length=50)
 
