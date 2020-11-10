@@ -25,8 +25,9 @@ class Product(models.Model):
         super().save(*args, **kwargs)
 
 
-
 class SmartPhone(Product):
+
+    """smartphone implementations (extends from product)"""
 
     water_resist = models.CharField(verbose_name="Стандарт защиты от воды", max_length=50)
     weight = models.IntegerField(verbose_name="Вес")
@@ -39,4 +40,12 @@ class SmartPhone(Product):
     ram = models.IntegerField(verbose_name="Оперативная память")
     ssd = models.IntegerField(verbose_name="Встроенная память")
     system = models.CharField(verbose_name="Платформа", max_length=50)
+
+
+class Sales(models.Model):
+
+    """ sale implementation """
+
+    title = models.CharField(max_length=150, verbose_name="Название")
+    image = models.ImageField(verbose_name="Баннер")  # 900x350
 
