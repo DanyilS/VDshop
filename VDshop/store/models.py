@@ -42,7 +42,7 @@ class SmartPhone(Product):
     system = models.CharField(verbose_name="Платформа", max_length=50)
 
 
-class Sales(models.Model):
+class Sale(models.Model):
 
     """ sale implementation """
 
