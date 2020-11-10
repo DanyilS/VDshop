@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SmartPhone, Sale
+from .models import SmartPhone, Sale, SmartWatch, Audio, Laptop, Computer, Tablet
 
 
 admin.site.register(SmartPhone)
