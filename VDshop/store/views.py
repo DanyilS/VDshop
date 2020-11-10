@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product, SmartPhone
+from .models import Product, SmartPhone, Sale
 
 
 def home(request):
-    context = {"smartphones": SmartPhone.objects.all()}
+    context = {"smartphones": SmartPhone.objects.all(),
+               "first_sale": Sale.objects.all()[0],
+               "sales": Sale.objects.all()[1:]}
     return render(request, "store/home.html", context=context)
 
 
