@@ -3,4 +3,9 @@ from .models import SmartPhone, Sale, SmartWatch, Audio, Laptop, Computer, Table
 
 
 admin.site.register(SmartPhone)
+admin.site.register(SmartWatch)
+admin.site.register(Audio)
+admin.site.register(Laptop)
+admin.site.register(Computer)
+admin.site.register(Tablet)
 admin.site.register(Sale)
